@@ -7,14 +7,14 @@ const userObject = function (userId, score){
     this.id = userId,
     this.score = score,
     this.increment = function(){
-    score++;    
+    this.score++;    
     }
     users.push(this);
 }
 
 const incrementUserScores = function (userList){
     userList.forEach(function (user){
-        user.increment;
+        user.increment();
     });
 }
 
@@ -24,8 +24,13 @@ var user2 = new userObject(102,83);
 
 var user3 = new userObject(103,43);
 
+console.log(users);
 
 incrementUserScores(users);
+
+console.log(users);
+
+
 users.forEach(function (user){
     console.log(user.score)
 });
